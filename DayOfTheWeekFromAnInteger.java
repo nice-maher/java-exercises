@@ -27,7 +27,7 @@ public class DayOfTheWeekFromAnInteger {
                 System.out.println("Sunday");
                 break;
             default:
-                System.out.println("invaild number");
+                System.out.println("Invaild number");
         }
         sc.close();
     }
