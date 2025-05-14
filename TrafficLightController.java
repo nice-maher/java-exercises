@@ -23,25 +23,30 @@ public class TrafficLightController {
 
         if(currentState == 0){
             return "Green";
-        }else if(currentState == 1){
-            return "Red";
-        }else if(currentState == 2){
-            return "Yellow";
-        }else {
-            return "Invalid input";
         }
+
+        if(currentState == 1){
+            return "Red";
+        }
+
+        if(currentState == 2){
+            return "Yellow";
+        }
+
+
+        return "Invalid input";
     }
 
 
     public static String getAction(String currentState){
-        if(currentState.equals("Red")){
-            return "Stop";
-        }else if(currentState.equals("Yellow")){
-            return "Caution";
-        }else if(currentState.equals("Green")){
-            return "Go";
-        }else{
-            return "Invalid input";
-        }
+        return switch (currentState) {
+            case "Red" -> "Stop"; // stop here and return Stop
+
+            case "Yellow" -> "Caution";
+            case "Green" -> "Go";
+            default -> "Invalid input";
+        };
+
+
     }
 }
